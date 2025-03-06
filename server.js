@@ -1,8 +1,11 @@
-
 const express = require('express');
 const request = require('request');
+const cors = require('cors'); // Import CORS
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Use CORS middleware
+app.use(cors());
 
 app.get('/fetch', (req, res) => {
     const url = req.query.url;
